@@ -3,129 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cosmos Odyssey | Explore o Universo</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+  <title>OrbitDev — Estação Espacial & Astronomia</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <header>
-    <div class="logo">
-      <i class="fas fa-user-astronaut"></i> COSMOS <span>ODYSSEY</span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#hero">Início</a></li>
-        <li><a href="#planetas">Planetas</a></li>
-        <li><a href="#curiosidades">Curiosidades</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#contato" class="btn-contato">Explorar</a></li>
-      </ul>
-    </nav>
-  </header>
+  <style>
+    /* RESET & VARIÁVEIS DE DESIGN */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
 
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <h1 class="reveal">O Infinito ao seu alcance.</h1>
-      <p class="reveal">Viaje pelas profundezas do espaço, descubra segredos de galáxias distantes e entenda os mistérios dos buracos negros.</p>
-      <div class="hero-btns reveal">
-        <a href="#planetas" class="btn-primary">Ver Planetas</a>
-        <a href="#video" class="btn-secondary">Saber Mais</a>
-      </div>
-    </div>
-  </section>
+    :root {
+      --bg-dark: #05070f;
+      --surface: #0e1322;
+      --surface-hover: #161c30;
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.4);
+      --accent: #38bdf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+    }
 
-  <section class="stats">
-    <div class="stat-item">
-      <h2 id="count-planetas">0</h2>
-      <p>Planetas no Sistema Solar</p>
-    </div>
-    <div class="stat-item">
-      <h2 id="count-estrelas">0</h2>
-      <p>Bilhões de Estrelas na Via Láctea</p>
-    </div>
-    <div class="stat-item">
-      <h2>13.8 Bi</h2>
-      <p>Anos de idade do Universo</p>
-    </div>
-  </section>
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.1) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
 
-  <section class="planets" id="planetas">
-    <div class="section-title">
-      <h2>Nosso Sistema Solar</h2>
-      <p>Conheça os gigantes que orbitam nossa estrela mãe.</p>
-    </div>
+    /* HEADER / NAVBAR */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 8%;
+      background: rgba(5, 7, 15, 0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-    <div class="planet-grid">
-      <div class="planet-card" data-planet="marte">
-        <div class="planet-img">
-          <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&q=80&w=400" alt="Marte">
-        </div>
-        <div class="planet-info">
-          <h3>Marte</h3>
-          <p>O Planeta Vermelho é o lar de montanhas gigantescas e vales profundos.</p>
-          <button class="learn-more">Detalhes</button>
-        </div>
-      </div>
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-      <div class="planet-card" data-planet="saturno">
-        <div class="planet-img">
-          <img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?auto=format&fit=crop&q=80&w=400" alt="Saturno">
-        </div>
-        <div class="planet-info">
-          <h3>Saturno</h3>
-          <p>Famoso por seu sistema de anéis espetacular composto de gelo e rocha.</p>
-          <button class="learn-more">Detalhes</button>
-        </div>
-      </div>
+    .logo span {
+      color: var(--accent);
+    }
 
-      <div class="planet-card" data-planet="jupiter">
-        <div class="planet-img">
-          <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bc46?auto=format&fit=crop&q=80&w=400" alt="Júpiter">
-        </div>
-        <div class="planet-info">
-          <h3>Júpiter</h3>
-          <p>O maior planeta do nosso sistema, um gigante gasoso com tempestades eternas.</p>
-          <button class="learn-more">Detalhes</button>
-        </div>
-      </div>
-    </div>
-  </section>
+    .badge {
+      background: rgba(99, 102, 241, 0.2);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-family: 'Orbitron', sans-serif;
+    }
 
-  <section class="facts" id="curiosidades">
-    <div class="fact-box">
-      <i class="fas fa-lightbulb"></i>
-      <h3>Você sabia?</h3>
-      <p id="fact-text">Clique no botão abaixo para gerar uma curiosidade espacial aleatória!</p>
-      <button id="new-fact-btn">Gerar Curiosidade</button>
-    </div>
-  </section>
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-about">
-        <h3>COSMOS ODYSSEY</h3>
-        <p>Inspirando mentes a olhar para as estrelas.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Explorar</h4>
-        <ul>
-          <li><a href="#">NASA News</a></li>
-          <li><a href="#">Telescópios</a></li>
-          <li><a href="#">Missões</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Cosmos Odyssey. Feito para os amantes do céu.</p>
-    </div>
-  </footer>
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-  <script src="script.js"></script>
-</body>
-</html>
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn-action {
+      background: linear-gradient(135deg, var(--primary), #4f46e5);
+      color: #fff;
+      border: none;
+      padding: 0.9rem 2.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 20px var(--primary-glow);
+      transition: all 0.3s ease;
+    }
+
+    .btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px var(--primary-glow);
+    }
+
+    /* CARDS CONTAINER */
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      background: var(--surface-hover);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* TELEMETRIA INTERATIVA */
+    .tele
