@@ -1,87 +1,13 @@
-// 1. Efeito de Revelação ao Rolar a Página
-window.addEventListener('scroll', reveal);
+const button = document.getElementById('interactiveBtn');
+let clicks = 0;
 
-function reveal() {
-  var reveals = document.querySelectorAll('.reveal');
-  
-  reveals.forEach(element => {
-    var windowHeight = window.innerHeight;
-    var revealTop = element.getBoundingClientRect().top;
-    var revealPoint = 150;
-    
-    if (revealTop < windowHeight - revealPoint) {
-      element.classList.add('active');
-    }
-  });
-}
-
-// Ativa a animação inicial do Hero
-document.addEventListener('DOMContentLoaded', () => {
-  reveal(); // Verifica se há elementos visíveis ao carregar
-  animateCounters();
-});
-
-
-// 2. Contador Animado para as Estatísticas
-function animateCounters() {
-  const speed = 200;
-  const counters = [
-    { id: 'count-planetas', target: 8 },
-    { id: 'count-estrelas', target: 400 }
-  ];
-
-  counters.forEach(counter => {
-    const el = document.getElementById(counter.id);
-    const target = counter.target;
-    let count = 0;
-    
-    const updateCount = () => {
-      const inc = target / speed;
-      if (count < target) {
-        count += inc;
-        el.innerText = Math.ceil(count);
-        setTimeout(updateCount, 1);
-      } else {
-        el.innerText = target;
-      }
-    };
-    updateCount();
-  });
-}
-
-// 3. Gerador de Curiosidades Aleatórias
-const curiosidades = [
-  "Um dia em Vênus é mais longo do que um ano inteiro na Terra.",
-  "O pôr do sol em Marte é azulado.",
-  "Existem mais estrelas no universo do que grãos de areia em todas as praias da Terra.",
-  "A pegada dos astronautas na Lua permanecerá lá por milhões de anos porque não há vento.",
-  "No espaço, o silêncio é total porque o som não tem meio para se propagar.",
-  "O maior vulcão do sistema solar, o Monte Olimpo, fica em Marte e é 3 vezes maior que o Everest."
-];
-
-const factBtn = document.getElementById('new-fact-btn');
-const factText = document.getElementById('fact-text');
-
-factBtn.addEventListener('click', () => {
-  // Adiciona um efeito de fade simples
-  factText.style.opacity = 0;
-  
-  setTimeout(() => {
-    const randomIndex = Math.floor(Math.random() * curiosidades.length);
-    factText.innerText = curiosidades[randomIndex];
-    factText.style.opacity = 1;
-  }, 300);
-});
-
-// 4. Smooth Scroll para os links internos
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      document.querySelector(href).scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  });
+button.addEventListener('click', () => {
+  clicks++;
+  if (clicks === 1) {
+    button.innerText = 'Incrível! Clique de novo 🔥';
+    button.style.backgroundColor = '#10b981'; // Altera a cor para verde
+    button.style.boxShadow = '0 4px 20px rgba(16, 185, 129, 0.4)';
+  } else {
+    button.innerText = `Você interagiu ${clicks} vezes! ✨`;
+  }
 });
