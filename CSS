@@ -1,0 +1,266 @@
+/* Importando fonte moderna */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --space-black: #05070a;
+  --nebula-purple: #6d28d9;
+  --star-gold: #fbbf24;
+  --text-white: #f8fafc;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background-color: var(--space-black);
+  color: var(--text-white);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(5, 7, 10, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--nebula-purple);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-white);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--nebula-purple);
+}
+
+.btn-contato {
+  background: var(--nebula-purple);
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('https://images.unsplash.com/photo-1464802686167-b939a6910659?auto=format&fit=crop&q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10%;
+}
+
+.hero-content h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #cbd5e1;
+}
+
+.btn-primary {
+  background: var(--nebula-purple);
+  color: white;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 1rem;
+  transition: 0.3s;
+}
+
+.btn-secondary {
+  border: 1px solid white;
+  color: white;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover { background: #5b21b6; }
+.btn-secondary:hover { background: white; color: black; }
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 4rem 5%;
+  background: #0a0e14;
+}
+
+.stat-item { text-align: center; }
+.stat-item h2 { 
+  font-size: 3rem; 
+  color: var(--star-gold); 
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* PLANET GRID */
+.planets {
+  padding: 6rem 5%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.planet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.planet-card {
+  background: var(--glass-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.4s;
+}
+
+.planet-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--nebula-purple);
+  box-shadow: 0 10px 30px rgba(109, 40, 217, 0.2);
+}
+
+.planet-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.planet-info {
+  padding: 2rem;
+}
+
+.planet-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.learn-more {
+  background: transparent;
+  border: 1px solid var(--nebula-purple);
+  color: var(--text-white);
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+/* FACTS SECTION */
+.facts {
+  padding: 6rem 5%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  text-align: center;
+}
+
+.fact-box {
+  background: rgba(109, 40, 217, 0.1);
+  padding: 4rem;
+  border-radius: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px dashed var(--nebula-purple);
+}
+
+.fact-box i { font-size: 3rem; color: var(--star-gold); margin-bottom: 1rem;}
+
+#new-fact-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background: var(--star-gold);
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: #020406;
+  padding: 4rem 5% 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-links ul { list-style: none; }
+.footer-links a { color: #94a3b8; text-decoration: none; line-height: 2; }
+.footer-social a { font-size: 1.5rem; color: white; margin-right: 1.5rem; }
+
+.footer-bottom {
+  text-align: center;
+  color: #475569;
+  font-size: 0.8rem;
+}
+
+/* Reveal Animation Class */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
