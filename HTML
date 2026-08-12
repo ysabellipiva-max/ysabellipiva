@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmos Odyssey | Explore o Universo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <i class="fas fa-user-astronaut"></i> COSMOS <span>ODYSSEY</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#planetas">Planetas</a></li>
+        <li><a href="#curiosidades">Curiosidades</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato" class="btn-contato">Explorar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1 class="reveal">O Infinito ao seu alcance.</h1>
+      <p class="reveal">Viaje pelas profundezas do espaço, descubra segredos de galáxias distantes e entenda os mistérios dos buracos negros.</p>
+      <div class="hero-btns reveal">
+        <a href="#planetas" class="btn-primary">Ver Planetas</a>
+        <a href="#video" class="btn-secondary">Saber Mais</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat-item">
+      <h2 id="count-planetas">0</h2>
+      <p>Planetas no Sistema Solar</p>
+    </div>
+    <div class="stat-item">
+      <h2 id="count-estrelas">0</h2>
+      <p>Bilhões de Estrelas na Via Láctea</p>
+    </div>
+    <div class="stat-item">
+      <h2>13.8 Bi</h2>
+      <p>Anos de idade do Universo</p>
+    </div>
+  </section>
+
+  <section class="planets" id="planetas">
+    <div class="section-title">
+      <h2>Nosso Sistema Solar</h2>
+      <p>Conheça os gigantes que orbitam nossa estrela mãe.</p>
+    </div>
+
+    <div class="planet-grid">
+      <div class="planet-card" data-planet="marte">
+        <div class="planet-img">
+          <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&q=80&w=400" alt="Marte">
+        </div>
+        <div class="planet-info">
+          <h3>Marte</h3>
+          <p>O Planeta Vermelho é o lar de montanhas gigantescas e vales profundos.</p>
+          <button class="learn-more">Detalhes</button>
+        </div>
+      </div>
+
+      <div class="planet-card" data-planet="saturno">
+        <div class="planet-img">
+          <img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?auto=format&fit=crop&q=80&w=400" alt="Saturno">
+        </div>
+        <div class="planet-info">
+          <h3>Saturno</h3>
+          <p>Famoso por seu sistema de anéis espetacular composto de gelo e rocha.</p>
+          <button class="learn-more">Detalhes</button>
+        </div>
+      </div>
+
+      <div class="planet-card" data-planet="jupiter">
+        <div class="planet-img">
+          <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bc46?auto=format&fit=crop&q=80&w=400" alt="Júpiter">
+        </div>
+        <div class="planet-info">
+          <h3>Júpiter</h3>
+          <p>O maior planeta do nosso sistema, um gigante gasoso com tempestades eternas.</p>
+          <button class="learn-more">Detalhes</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="facts" id="curiosidades">
+    <div class="fact-box">
+      <i class="fas fa-lightbulb"></i>
+      <h3>Você sabia?</h3>
+      <p id="fact-text">Clique no botão abaixo para gerar uma curiosidade espacial aleatória!</p>
+      <button id="new-fact-btn">Gerar Curiosidade</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-about">
+        <h3>COSMOS ODYSSEY</h3>
+        <p>Inspirando mentes a olhar para as estrelas.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="#">NASA News</a></li>
+          <li><a href="#">Telescópios</a></li>
+          <li><a href="#">Missões</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cosmos Odyssey. Feito para os amantes do céu.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
